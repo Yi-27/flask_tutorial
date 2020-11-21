@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}新增博文{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="title">标题</label>
+        <!--required 表示该表单必填-->
+        <input type="text" name="title" id="title" value="{{ request.form['title'] }}" required>
+        <label for="body">正文</label>
+        <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
+        <input type="submit" value="发表">
+    </form>
+{% endblock %}

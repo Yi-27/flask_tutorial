@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>{% block title %}博客{% endblock %}</h1>
+    {% if g.user%}
+        <a class="action" href="{{ url_for('blog.create') }}">写博客</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <article class="post">
+            <header>
+                <!-- 标题头写明 博客标题 和 作者 和 日期-->
+                <div>
+                    <h1>{{ post['title'] }}</h1>
+                    <div class="about">由 {{ post["username"] }} 于 {{ post["created"].strftime("%Y-%m-%d") }}</div>
+                </div>
+
+                <!-- 当博文是当前用户自己的时，就显示编辑按钮-->
+                {% if g.user["id"] == post["author_id"] %}
+                    <a class="action" href="{{ url_for('blog.update', post_id=post['id']) }}">编辑</a>
+                {% endif %}
+            </header>
+            <p class="body">{{ post['body'] }}</p>
+        </article>
+
+        <!--判断可是最后一篇博客，不是就是加一条线，隔开两篇博客-->
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

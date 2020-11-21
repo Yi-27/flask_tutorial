@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<title>{% block title %}{% endblock %} -Flaskr</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+    <h1>Flaskr</h1>
+    <ul>
+        {% if g.user%}
+            <!-- 不但可以设置 `title` 块，还可以把其值作为 `header` 块的内容  -->
+            <li><span>{{ g.user["username"] }}</span></li>
+            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+        {% else %}
+            <!-- 不存在就显示 注册 和 登录  -->
+            <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+            <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+        {% endif %}
+    </ul>
+</nav>
+<section class="content">
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    <!--循环显示 `get_flashed_messages()`返回 的每个消息-->
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    <!--页面的具体内容块-->
+    {% block content %}{% endblock %}
+</section>

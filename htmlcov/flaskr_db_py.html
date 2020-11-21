@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+    <title>Coverage for flaskr\db.py: 100%</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="jquery.isonscreen.js"></script>
+    <script type="text/javascript" src="coverage_html.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(coverage.pyfile_ready);
+    </script>
+</head>
+<body class="pyfile">
+<div id="header">
+    <div class="content">
+        <h1>Coverage for <b>flaskr\db.py</b> :
+            <span class="pc_cov">100%</span>
+        </h1>
+        <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
+        <h2 class="stats">
+            25 statements &nbsp;
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">25 run</button>
+            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">0 missing</button>
+            <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
+            <button type="button" class="par run show_par shortkey_p button_toggle_par" title="Toggle lines partially run">0 partial</button>
+        </h2>
+    </div>
+</div>
+<div class="help_panel">
+    <img id="panel_icon" src="keybd_open.png" alt="Hide keyboard shortcuts" />
+    <p class="legend">Hot-keys on this page</p>
+    <div>
+    <p class="keyhelp">
+        <span class="key">r</span>
+        <span class="key">m</span>
+        <span class="key">x</span>
+        <span class="key">p</span> &nbsp; toggle line displays
+    </p>
+    <p class="keyhelp">
+        <span class="key">j</span>
+        <span class="key">k</span> &nbsp; next/prev highlighted chunk
+    </p>
+    <p class="keyhelp">
+        <span class="key">0</span> &nbsp; (zero) top of page
+    </p>
+    <p class="keyhelp">
+        <span class="key">1</span> &nbsp; (one) first highlighted chunk
+    </p>
+    </div>
+</div>
+<div id="source">
+    <p id="t1" class="run"><span class="n"><a href="#t1">1</a></span><span class="t"><span class="key">import</span> <span class="nam">sqlite3</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t2" class="pln"><span class="n"><a href="#t2">2</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t3" class="run"><span class="n"><a href="#t3">3</a></span><span class="t"><span class="key">import</span> <span class="nam">click</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t4" class="run"><span class="n"><a href="#t4">4</a></span><span class="t"><span class="key">from</span> <span class="nam">flask</span> <span class="key">import</span> <span class="nam">current_app</span><span class="op">,</span> <span class="nam">g</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t5" class="run"><span class="n"><a href="#t5">5</a></span><span class="t"><span class="key">from</span> <span class="nam">flask</span><span class="op">.</span><span class="nam">cli</span> <span class="key">import</span> <span class="nam">with_appcontext</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t6" class="pln"><span class="n"><a href="#t6">6</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t7" class="pln"><span class="n"><a href="#t7">7</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t8" class="pln"><span class="n"><a href="#t8">8</a></span><span class="t"><span class="com"># &#21021;&#22987;&#21270;&#25968;&#25454;&#24211;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t9" class="run"><span class="n"><a href="#t9">9</a></span><span class="t"><span class="key">def</span> <span class="nam">init_db</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t10" class="pln"><span class="n"><a href="#t10">10</a></span><span class="t">    <span class="com"># &#33719;&#21462;&#36830;&#25509;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t11" class="run"><span class="n"><a href="#t11">11</a></span><span class="t">    <span class="nam">db</span> <span class="op">=</span> <span class="nam">get_db</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t12" class="pln"><span class="n"><a href="#t12">12</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t13" class="pln"><span class="n"><a href="#t13">13</a></span><span class="t">    <span class="com"># &#25171;&#24320;sql&#25991;&#20214;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t14" class="run"><span class="n"><a href="#t14">14</a></span><span class="t">    <span class="key">with</span> <span class="nam">current_app</span><span class="op">.</span><span class="nam">open_resource</span><span class="op">(</span><span class="str">'schema.sql'</span><span class="op">)</span> <span class="key">as</span> <span class="nam">f</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t15" class="pln"><span class="n"><a href="#t15">15</a></span><span class="t">        <span class="com"># &#35835;&#21462;&#25991;&#20214;&#20013;sql&#35821;&#21477;&#65292;&#28982;&#21518;&#25191;&#34892;&#23427;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t16" class="run"><span class="n"><a href="#t16">16</a></span><span class="t">        <span class="nam">db</span><span class="op">.</span><span class="nam">executescript</span><span class="op">(</span><span class="nam">f</span><span class="op">.</span><span class="nam">read</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">decode</span><span class="op">(</span><span class="str">"utf8"</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t17" class="pln"><span class="n"><a href="#t17">17</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t18" class="pln"><span class="n"><a href="#t18">18</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t19" class="pln"><span class="n"><a href="#t19">19</a></span><span class="t"><span class="com"># &#23450;&#20041;&#19968;&#20010;&#21517;&#20026; init-db &#21629;&#20196;&#34892;&#65292;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t20" class="pln"><span class="n"><a href="#t20">20</a></span><span class="t"><span class="com"># &#23427;&#35843;&#29992; init_db &#20989;&#25968;&#65292;&#24182;&#20026;&#29992;&#25143;&#26174;&#31034;&#19968;&#20010;&#25104;&#21151;&#30340;&#28040;&#24687;&#12290;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t21" class="run"><span class="n"><a href="#t21">21</a></span><span class="t"><span class="op">@</span><span class="nam">click</span><span class="op">.</span><span class="nam">command</span><span class="op">(</span><span class="str">"init-db"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t22" class="run"><span class="n"><a href="#t22">22</a></span><span class="t"><span class="op">@</span><span class="nam">with_appcontext</span>  <span class="com"># &#24212;&#35813;&#26159;&#29992;&#20110;&#33719;&#21462;&#24403;&#21069;&#24212;&#29992;&#36816;&#34892;&#30340;&#19978;&#19979;&#25991;&#29615;&#22659;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t23" class="pln"><span class="n"><a href="#t23">23</a></span><span class="t"><span class="key">def</span> <span class="nam">init_db_command</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t24" class="pln"><span class="n"><a href="#t24">24</a></span><span class="t">    <span class="com"># &#21021;&#22987;&#21270;&#25968;&#25454;&#24211;&#65288;&#33509;&#24050;&#23384;&#22312;&#34920;&#23601;&#21024;&#38500;&#65289;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t25" class="run"><span class="n"><a href="#t25">25</a></span><span class="t">    <span class="nam">init_db</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t26" class="run"><span class="n"><a href="#t26">26</a></span><span class="t">    <span class="nam">click</span><span class="op">.</span><span class="nam">echo</span><span class="op">(</span><span class="str">"&#21021;&#22987;&#21270;&#25968;&#25454;&#24211;&#65281;"</span><span class="op">)</span>  <span class="com"># &#21487;&#29992;&#20110;&#27979;&#35797;&#33719;&#24471;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t27" class="run"><span class="n"><a href="#t27">27</a></span><span class="t">    <span class="str">"""</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t28" class="pln"><span class="n"><a href="#t28">28</a></span><span class="t"><span class="str">    `click.command()`&#23450;&#20041;&#19968;&#20010;&#21517;&#20026; `init-db` &#21629;&#20196;&#34892;&#65292;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t29" class="pln"><span class="n"><a href="#t29">29</a></span><span class="t"><span class="str">     &#23427;&#35843;&#29992; `init_db` &#20989;&#25968;&#65292;&#24182;&#20026;&#29992;&#25143;&#26174;&#31034;&#19968;&#20010;&#25104;&#21151;&#30340;&#28040;&#24687;&#12290;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t30" class="pln"><span class="n"><a href="#t30">30</a></span><span class="t"><span class="str">    """</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t31" class="pln"><span class="n"><a href="#t31">31</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t32" class="pln"><span class="n"><a href="#t32">32</a></span><span class="t"><span class="com"># &#33719;&#21462;&#36830;&#25509;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t33" class="run"><span class="n"><a href="#t33">33</a></span><span class="t"><span class="key">def</span> <span class="nam">get_db</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t34" class="run"><span class="n"><a href="#t34">34</a></span><span class="t">    <span class="key">if</span> <span class="str">"db"</span> <span class="key">not</span> <span class="key">in</span> <span class="nam">g</span><span class="op">:</span>  <span class="com"># g&#20063;&#26159;&#29992;&#26469;&#23384;&#20648;&#25968;&#25454;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t35" class="pln"><span class="n"><a href="#t35">35</a></span><span class="t">        <span class="com"># &#21019;&#24314;&#20010;&#36830;&#25509;&#28982;&#24182;&#25918;&#36827;g&#20013;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t36" class="run"><span class="n"><a href="#t36">36</a></span><span class="t">        <span class="nam">g</span><span class="op">.</span><span class="nam">db</span> <span class="op">=</span> <span class="nam">sqlite3</span><span class="op">.</span><span class="nam">connect</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t37" class="pln"><span class="n"><a href="#t37">37</a></span><span class="t">            <span class="com"># &#36825;&#37324;&#22240;&#20026;&#27809;&#21150;&#27861;&#30452;&#25509;&#29992;&#24037;&#21378;&#20989;&#25968;return&#30340;app</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t38" class="pln"><span class="n"><a href="#t38">38</a></span><span class="t">            <span class="com"># &#25152;&#20197;&#38656;&#35201;&#29992;current_app&#26469;&#25351;&#21521;&#36825;&#20010;app&#65292;&#22909;&#23545;&#23427;&#36827;&#34892;&#25805;&#20316;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t39" class="pln"><span class="n"><a href="#t39">39</a></span><span class="t">            <span class="nam">current_app</span><span class="op">.</span><span class="nam">config</span><span class="op">[</span><span class="str">'DATABASE'</span><span class="op">]</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t40" class="pln"><span class="n"><a href="#t40">40</a></span><span class="t">            <span class="nam">detect_types</span><span class="op">=</span><span class="nam">sqlite3</span><span class="op">.</span><span class="nam">PARSE_DECLTYPES</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t41" class="pln"><span class="n"><a href="#t41">41</a></span><span class="t">        <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t42" class="run"><span class="n"><a href="#t42">42</a></span><span class="t">        <span class="nam">g</span><span class="op">.</span><span class="nam">db</span><span class="op">.</span><span class="nam">row_factory</span> <span class="op">=</span> <span class="nam">sqlite3</span><span class="op">.</span><span class="nam">Row</span>  <span class="com"># &#21578;&#35785;&#36830;&#25509;&#36820;&#22238;&#31867;&#20284;&#20110;&#23383;&#20856;&#30340;&#34892;&#65292;&#36825;&#26679;&#21487;&#20197;&#36890;&#36807;&#21015;&#21517;&#31216;&#26469;&#25805;&#20316; &#25968;&#25454;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t43" class="pln"><span class="n"><a href="#t43">43</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t44" class="run"><span class="n"><a href="#t44">44</a></span><span class="t">    <span class="key">return</span> <span class="nam">g</span><span class="op">.</span><span class="nam">db</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t45" class="pln"><span class="n"><a href="#t45">45</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t46" class="pln"><span class="n"><a href="#t46">46</a></span><span class="t"><span class="com"># &#20851;&#38381;&#36830;&#25509;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t47" class="run"><span class="n"><a href="#t47">47</a></span><span class="t"><span class="key">def</span> <span class="nam">close_db</span><span class="op">(</span><span class="nam">e</span><span class="op">=</span><span class="key">None</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t48" class="run"><span class="n"><a href="#t48">48</a></span><span class="t">    <span class="nam">db</span> <span class="op">=</span> <span class="nam">g</span><span class="op">.</span><span class="nam">pop</span><span class="op">(</span><span class="str">'db'</span><span class="op">,</span> <span class="key">None</span><span class="op">)</span>  <span class="com"># &#20174;g&#20013;&#24377;&#20986;&#36830;&#25509;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t49" class="run"><span class="n"><a href="#t49">49</a></span><span class="t">    <span class="key">if</span> <span class="nam">db</span> <span class="key">is</span> <span class="key">not</span> <span class="key">None</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t50" class="run"><span class="n"><a href="#t50">50</a></span><span class="t">        <span class="nam">db</span><span class="op">.</span><span class="nam">close</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t51" class="pln"><span class="n"><a href="#t51">51</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t52" class="pln"><span class="n"><a href="#t52">52</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t53" class="pln"><span class="n"><a href="#t53">53</a></span><span class="t"><span class="com"># &#27880;&#20876;&#21040;&#24212;&#29992;&#20013;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t54" class="run"><span class="n"><a href="#t54">54</a></span><span class="t"><span class="key">def</span> <span class="nam">init_app</span><span class="op">(</span><span class="nam">app</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t55" class="pln"><span class="n"><a href="#t55">55</a></span><span class="t">    <span class="com"># &#21578;&#35785; Flask &#22312;&#36820;&#22238;&#21709;&#24212;&#21518;&#36827;&#34892;&#28165;&#29702;&#30340;&#26102;&#20505;&#35843;&#29992;&#27492;&#20989;&#25968;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t56" class="run"><span class="n"><a href="#t56">56</a></span><span class="t">    <span class="nam">app</span><span class="op">.</span><span class="nam">teardown_appcontext</span><span class="op">(</span><span class="nam">close_db</span><span class="op">)</span>  <span class="com"># &#27880;&#20876;&#20851;&#38381;&#25968;&#25454;&#24211;&#36830;&#25509;&#30340;&#20989;&#25968;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t57" class="pln"><span class="n"><a href="#t57">57</a></span><span class="t">    <span class="com"># &#28155;&#21152;&#19968;&#20010;&#26032;&#30340; &#21487;&#20197;&#19982; `flask`&#19968;&#36215;&#24037;&#20316;&#30340;&#21629;&#20196;&#12290;&#21629;&#20196;&#34892;&#20013;&#30340;`flask`&#26159;&#23567;&#20889;&#30340;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t58" class="run"><span class="n"><a href="#t58">58</a></span><span class="t">    <span class="nam">app</span><span class="op">.</span><span class="nam">cli</span><span class="op">.</span><span class="nam">add_command</span><span class="op">(</span><span class="nam">init_db_command</span><span class="op">)</span>  <span class="com"># &#27880;&#20876;&#21021;&#22987;&#21270;&#25968;&#25454;&#24211;&#30340;&#21629;&#20196;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t59" class="pln"><span class="n"><a href="#t59">59</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t60" class="pln"><span class="n"><a href="#t60">60</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t61" class="pln"><span class="n"><a href="#t61">61</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t62" class="pln"><span class="n"><a href="#t62">62</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t63" class="pln"><span class="n"><a href="#t63">63</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+</div>
+<div id="footer">
+    <div class="content">
+        <p>
+            <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.3</a>,
+            created at 2020-11-21 20:12 +0800
+        </p>
+    </div>
+</div>
+</body>
+</html>

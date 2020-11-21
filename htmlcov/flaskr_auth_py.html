@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+    <title>Coverage for flaskr\auth.py: 99%</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="jquery.isonscreen.js"></script>
+    <script type="text/javascript" src="coverage_html.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(coverage.pyfile_ready);
+    </script>
+</head>
+<body class="pyfile">
+<div id="header">
+    <div class="content">
+        <h1>Coverage for <b>flaskr\auth.py</b> :
+            <span class="pc_cov">99%</span>
+        </h1>
+        <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
+        <h2 class="stats">
+            54 statements &nbsp;
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">54 run</button>
+            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">0 missing</button>
+            <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
+            <button type="button" class="par run show_par shortkey_p button_toggle_par" title="Toggle lines partially run">1 partial</button>
+        </h2>
+    </div>
+</div>
+<div class="help_panel">
+    <img id="panel_icon" src="keybd_open.png" alt="Hide keyboard shortcuts" />
+    <p class="legend">Hot-keys on this page</p>
+    <div>
+    <p class="keyhelp">
+        <span class="key">r</span>
+        <span class="key">m</span>
+        <span class="key">x</span>
+        <span class="key">p</span> &nbsp; toggle line displays
+    </p>
+    <p class="keyhelp">
+        <span class="key">j</span>
+        <span class="key">k</span> &nbsp; next/prev highlighted chunk
+    </p>
+    <p class="keyhelp">
+        <span class="key">0</span> &nbsp; (zero) top of page
+    </p>
+    <p class="keyhelp">
+        <span class="key">1</span> &nbsp; (one) first highlighted chunk
+    </p>
+    </div>
+</div>
+<div id="source">
+    <p id="t1" class="run"><span class="n"><a href="#t1">1</a></span><span class="t"><span class="key">import</span> <span class="nam">functools</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t2" class="pln"><span class="n"><a href="#t2">2</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t3" class="pln"><span class="n"><a href="#t3">3</a></span><span class="t"><span class="com"># &#23548;&#20837;&#33021;&#29992;&#21040;&#30340;flask&#30340;&#21253;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t4" class="run"><span class="n"><a href="#t4">4</a></span><span class="t"><span class="key">from</span> <span class="nam">flask</span> <span class="key">import</span> <span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t5" class="pln"><span class="n"><a href="#t5">5</a></span><span class="t">    <span class="nam">Blueprint</span><span class="op">,</span> <span class="nam">flash</span><span class="op">,</span> <span class="nam">g</span><span class="op">,</span> <span class="nam">redirect</span><span class="op">,</span> <span class="nam">render_template</span><span class="op">,</span> <span class="nam">request</span><span class="op">,</span> <span class="nam">session</span><span class="op">,</span> <span class="nam">url_for</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t6" class="pln"><span class="n"><a href="#t6">6</a></span><span class="t"><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t7" class="pln"><span class="n"><a href="#t7">7</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t8" class="run"><span class="n"><a href="#t8">8</a></span><span class="t"><span class="key">from</span> <span class="nam">werkzeug</span><span class="op">.</span><span class="nam">security</span> <span class="key">import</span> <span class="nam">check_password_hash</span><span class="op">,</span> <span class="nam">generate_password_hash</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t9" class="pln"><span class="n"><a href="#t9">9</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t10" class="run"><span class="n"><a href="#t10">10</a></span><span class="t"><span class="key">from</span> <span class="nam">flaskr</span><span class="op">.</span><span class="nam">db</span> <span class="key">import</span> <span class="nam">get_db</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t11" class="pln"><span class="n"><a href="#t11">11</a></span><span class="t"><span class="com"># &#22240;&#20026;&#24403;&#21069;&#30340;python&#24211;&#30340;&#25628;&#32034;&#36335;&#24452;&#26102;&#20174;flask_tutorial&#24320;&#22987;&#30340;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t12" class="pln"><span class="n"><a href="#t12">12</a></span><span class="t"><span class="com"># &#25152;&#20197;&#19981;&#33021;&#30452;&#25509;from db import get_db&#65292;Python&#30340;&#34394;&#25311;&#29615;&#22659;&#26159;&#22312;flask_tutorial&#19979;&#30340;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t13" class="pln"><span class="n"><a href="#t13">13</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t14" class="pln"><span class="n"><a href="#t14">14</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t15" class="pln"><span class="n"><a href="#t15">15</a></span><span class="t"><span class="com"># &#21019;&#24314;&#34013;&#22270;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t16" class="pln"><span class="n"><a href="#t16">16</a></span><span class="t"><span class="com"># &#31532;&#19968;&#20010;&#21442;&#25968;&#20026; &#34013;&#22270;&#30340;&#21517;&#31216;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t17" class="pln"><span class="n"><a href="#t17">17</a></span><span class="t"><span class="com"># &#31532;&#20108;&#20010;&#21442;&#25968;&#20026; &#34013;&#22270;&#23450;&#20041;&#30340;&#22320;&#26041;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t18" class="pln"><span class="n"><a href="#t18">18</a></span><span class="t"><span class="com"># &#31532;&#19977;&#20010;&#21442;&#25968;&#20026; &#34013;&#22270;&#19979;&#25152;&#26377;URL&#30340;&#21069;&#32512; &#27604;&#22914;/auth/abc  /auth/def</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t19" class="run"><span class="n"><a href="#t19">19</a></span><span class="t"><span class="nam">bp</span> <span class="op">=</span> <span class="nam">Blueprint</span><span class="op">(</span><span class="str">"auth"</span><span class="op">,</span> <span class="nam">__name__</span><span class="op">,</span> <span class="nam">url_prefix</span><span class="op">=</span><span class="str">"/auth"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t20" class="pln"><span class="n"><a href="#t20">20</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t21" class="pln"><span class="n"><a href="#t21">21</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t22" class="pln"><span class="n"><a href="#t22">22</a></span><span class="t"><span class="com"># &#35748;&#35777;&#34013;&#22270;&#23558;&#21253;&#25324;&#27880;&#20876;&#26032;&#29992;&#25143;&#12289;&#30331;&#24405;&#21644;&#27880;&#38144;&#35270;&#22270;&#12290;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t23" class="run"><span class="n"><a href="#t23">23</a></span><span class="t"><span class="op">@</span><span class="nam">bp</span><span class="op">.</span><span class="nam">route</span><span class="op">(</span><span class="str">'/register'</span><span class="op">,</span> <span class="nam">methods</span><span class="op">=</span><span class="op">(</span><span class="str">"GET"</span><span class="op">,</span> <span class="str">"POST"</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t24" class="pln"><span class="n"><a href="#t24">24</a></span><span class="t"><span class="key">def</span> <span class="nam">register</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t25" class="run"><span class="n"><a href="#t25">25</a></span><span class="t">    <span class="key">if</span> <span class="nam">request</span><span class="op">.</span><span class="nam">method</span> <span class="op">==</span> <span class="str">"POST"</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t26" class="run"><span class="n"><a href="#t26">26</a></span><span class="t">        <span class="nam">username</span> <span class="op">=</span> <span class="nam">request</span><span class="op">.</span><span class="nam">form</span><span class="op">[</span><span class="str">"username"</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t27" class="run"><span class="n"><a href="#t27">27</a></span><span class="t">        <span class="nam">password</span> <span class="op">=</span> <span class="nam">request</span><span class="op">.</span><span class="nam">form</span><span class="op">[</span><span class="str">"password"</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t28" class="pln"><span class="n"><a href="#t28">28</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t29" class="pln"><span class="n"><a href="#t29">29</a></span><span class="t">        <span class="com"># &#33719;&#21462;&#25968;&#25454;&#24211;&#36830;&#25509;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t30" class="run"><span class="n"><a href="#t30">30</a></span><span class="t">        <span class="nam">db</span> <span class="op">=</span> <span class="nam">get_db</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t31" class="run"><span class="n"><a href="#t31">31</a></span><span class="t">        <span class="nam">error</span> <span class="op">=</span> <span class="key">None</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t32" class="pln"><span class="n"><a href="#t32">32</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t33" class="pln"><span class="n"><a href="#t33">33</a></span><span class="t">        <span class="com"># &#22635;&#27809;&#22635;&#20889;&#20854;&#23454;&#24212;&#35813;&#21069;&#31471;&#26469;&#26816;&#39564;&#65292;&#36825;&#37324;&#21482;&#26159;&#36825;&#26679;&#20889;&#32780;&#24050;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t34" class="run"><span class="n"><a href="#t34">34</a></span><span class="t">        <span class="key">if</span> <span class="key">not</span> <span class="nam">username</span> <span class="key">or</span> <span class="nam">username</span> <span class="op">==</span> <span class="str">""</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t35" class="run"><span class="n"><a href="#t35">35</a></span><span class="t">            <span class="nam">error</span> <span class="op">=</span> <span class="str">"&#38656;&#35201;&#22635;&#20889;&#29992;&#25143;&#21517;&#65281;"</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t36" class="run"><span class="n"><a href="#t36">36</a></span><span class="t">        <span class="key">elif</span> <span class="key">not</span> <span class="nam">password</span> <span class="key">or</span> <span class="nam">password</span> <span class="op">==</span> <span class="str">""</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t37" class="run"><span class="n"><a href="#t37">37</a></span><span class="t">            <span class="nam">error</span> <span class="op">=</span> <span class="str">"&#38656;&#35201;&#22635;&#20889;&#23494;&#30721;"</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t38" class="run"><span class="n"><a href="#t38">38</a></span><span class="t">        <span class="key">elif</span> <span class="nam">db</span><span class="op">.</span><span class="nam">execute</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t39" class="pln"><span class="n"><a href="#t39">39</a></span><span class="t">            <span class="str">"SELECT id FROM user WHERE username = ?"</span><span class="op">,</span> <span class="op">(</span><span class="nam">username</span><span class="op">,</span> <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t40" class="pln"><span class="n"><a href="#t40">40</a></span><span class="t">        <span class="op">)</span><span class="op">.</span><span class="nam">fetchone</span><span class="op">(</span><span class="op">)</span> <span class="key">is</span> <span class="key">not</span> <span class="key">None</span><span class="op">:</span>  <span class="com"># fetchone()&#29992;&#20110;&#33719;&#21462;&#25968;&#25454;&#24211;&#36820;&#22238;&#25968;&#25454;&#20013;&#30340;&#19968;&#26465;&#25968;&#25454;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t41" class="run"><span class="n"><a href="#t41">41</a></span><span class="t">            <span class="nam">error</span> <span class="op">=</span> <span class="str">"&#29992;&#25143;&#24050;&#32463;&#27880;&#20876;&#36807;&#20102;&#65281;"</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t42" class="pln"><span class="n"><a href="#t42">42</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t43" class="run"><span class="n"><a href="#t43">43</a></span><span class="t">        <span class="key">if</span> <span class="nam">error</span> <span class="key">is</span> <span class="key">None</span><span class="op">:</span>  <span class="com"># &#35828;&#26126;&#26159;&#27880;&#20876;&#65292;&#21521;&#25968;&#25454;&#24211;&#20013;&#28155;&#21152;&#35813;user</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t44" class="run"><span class="n"><a href="#t44">44</a></span><span class="t">            <span class="nam">db</span><span class="op">.</span><span class="nam">execute</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t45" class="pln"><span class="n"><a href="#t45">45</a></span><span class="t">                <span class="str">"INSERT INTO user(username, password) VALUES(?, ?)"</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t46" class="pln"><span class="n"><a href="#t46">46</a></span><span class="t">                <span class="op">(</span><span class="nam">username</span><span class="op">,</span> <span class="nam">generate_password_hash</span><span class="op">(</span><span class="nam">password</span><span class="op">)</span><span class="op">)</span>  <span class="com"># &#23558;&#23494;&#30721;hash&#19968;&#19979;&#65292;&#19981;&#26126;&#25991;&#23384;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t47" class="pln"><span class="n"><a href="#t47">47</a></span><span class="t">            <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t48" class="run"><span class="n"><a href="#t48">48</a></span><span class="t">            <span class="nam">db</span><span class="op">.</span><span class="nam">commit</span><span class="op">(</span><span class="op">)</span>  <span class="com"># &#25552;&#20132;&#20107;&#21153;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t49" class="pln"><span class="n"><a href="#t49">49</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t50" class="pln"><span class="n"><a href="#t50">50</a></span><span class="t">            <span class="com"># &#37325;&#23450;&#21521;&#22238;&#30331;&#24405;&#39029;&#38754;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t51" class="run"><span class="n"><a href="#t51">51</a></span><span class="t">            <span class="key">return</span> <span class="nam">redirect</span><span class="op">(</span><span class="nam">url_for</span><span class="op">(</span><span class="str">"auth.login"</span><span class="op">)</span><span class="op">)</span>  <span class="com"># &#36825;&#37324;url_for()&#20013;&#30340;&#21442;&#25968;&#26159;login&#35270;&#22270;&#20989;&#25968;&#65292;&#36825;&#26679;&#20570;&#23601;&#21487;&#20197;&#33258;&#21160;&#33719;&#21462;&#30331;&#24405;&#30340;url&#20102;&#65292;&#32780;&#19981;&#26159;&#20889;&#27515;&#23427;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t52" class="pln"><span class="n"><a href="#t52">52</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t53" class="run"><span class="n"><a href="#t53">53</a></span><span class="t">        <span class="nam">flash</span><span class="op">(</span><span class="nam">error</span><span class="op">)</span>  <span class="com"># &#38378;&#23384;&#24403;&#21069;error&#65292;&#21482;&#26377;&#33719;&#21462;&#19968;&#27425;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t54" class="pln"><span class="n"><a href="#t54">54</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t55" class="run"><span class="n"><a href="#t55">55</a></span><span class="t">    <span class="key">return</span> <span class="nam">render_template</span><span class="op">(</span><span class="str">"auth/register.html"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t56" class="pln"><span class="n"><a href="#t56">56</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t57" class="pln"><span class="n"><a href="#t57">57</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t58" class="run"><span class="n"><a href="#t58">58</a></span><span class="t"><span class="op">@</span><span class="nam">bp</span><span class="op">.</span><span class="nam">route</span><span class="op">(</span><span class="str">'/login'</span><span class="op">,</span> <span class="nam">methods</span><span class="op">=</span><span class="op">(</span><span class="str">"GET"</span><span class="op">,</span> <span class="str">"POST"</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t59" class="pln"><span class="n"><a href="#t59">59</a></span><span class="t"><span class="key">def</span> <span class="nam">login</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t60" class="par run show_par"><span class="n"><a href="#t60">60</a></span><span class="t">    <span class="key">if</span> <span class="nam">request</span><span class="op">.</span><span class="nam">method</span> <span class="op">==</span> <span class="str">"POST"</span><span class="op">:</span>&nbsp;</span><span class="r"><span class="annotate short">60&#x202F;&#x219B;&#x202F;85</span><span class="annotate long">line 60 didn't jump to line 85, because the condition on line 60 was never false</span></span></p>
+    <p id="t61" class="run"><span class="n"><a href="#t61">61</a></span><span class="t">        <span class="nam">username</span> <span class="op">=</span> <span class="nam">request</span><span class="op">.</span><span class="nam">form</span><span class="op">[</span><span class="str">"username"</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t62" class="run"><span class="n"><a href="#t62">62</a></span><span class="t">        <span class="nam">password</span> <span class="op">=</span> <span class="nam">request</span><span class="op">.</span><span class="nam">form</span><span class="op">[</span><span class="str">"password"</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t63" class="pln"><span class="n"><a href="#t63">63</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t64" class="pln"><span class="n"><a href="#t64">64</a></span><span class="t">        <span class="com"># &#33719;&#21462;&#25968;&#25454;&#24211;&#36830;&#25509;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t65" class="run"><span class="n"><a href="#t65">65</a></span><span class="t">        <span class="nam">db</span> <span class="op">=</span> <span class="nam">get_db</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t66" class="pln"><span class="n"><a href="#t66">66</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t67" class="run"><span class="n"><a href="#t67">67</a></span><span class="t">        <span class="nam">error</span> <span class="op">=</span> <span class="key">None</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t68" class="pln"><span class="n"><a href="#t68">68</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t69" class="run"><span class="n"><a href="#t69">69</a></span><span class="t">        <span class="nam">user</span> <span class="op">=</span> <span class="nam">db</span><span class="op">.</span><span class="nam">execute</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t70" class="pln"><span class="n"><a href="#t70">70</a></span><span class="t">            <span class="str">"SELECT * FROM user WHERE username = ?"</span><span class="op">,</span> <span class="op">(</span><span class="nam">username</span><span class="op">,</span> <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t71" class="pln"><span class="n"><a href="#t71">71</a></span><span class="t">        <span class="op">)</span><span class="op">.</span><span class="nam">fetchone</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t72" class="pln"><span class="n"><a href="#t72">72</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t73" class="run"><span class="n"><a href="#t73">73</a></span><span class="t">        <span class="key">if</span> <span class="nam">user</span> <span class="key">is</span> <span class="key">None</span> <span class="key">or</span> <span class="nam">user</span> <span class="op">==</span> <span class="str">""</span><span class="op">:</span>  <span class="com"># &#36825;&#37324;&#20026;&#29992;&#25143;&#21517;&#20026;"" &#31354;&#23383;&#31526;&#20018;&#26102;&#20063;&#19981;&#20026;&#31354;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t74" class="run"><span class="n"><a href="#t74">74</a></span><span class="t">            <span class="nam">error</span> <span class="op">=</span> <span class="str">"&#29992;&#25143;&#21517;&#20026;&#31354;&#25110;&#19981;&#27491;&#30830;&#65281;"</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t75" class="run"><span class="n"><a href="#t75">75</a></span><span class="t">        <span class="key">elif</span> <span class="key">not</span> <span class="nam">check_password_hash</span><span class="op">(</span><span class="nam">user</span><span class="op">[</span><span class="str">'password'</span><span class="op">]</span><span class="op">,</span> <span class="nam">password</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t76" class="run"><span class="n"><a href="#t76">76</a></span><span class="t">            <span class="nam">error</span> <span class="op">=</span> <span class="str">"&#23494;&#30721;&#20026;&#31354;&#25110;&#19981;&#27491;&#30830;&#65281;"</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t77" class="pln"><span class="n"><a href="#t77">77</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t78" class="run"><span class="n"><a href="#t78">78</a></span><span class="t">        <span class="key">if</span> <span class="nam">error</span> <span class="key">is</span> <span class="key">None</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t79" class="run"><span class="n"><a href="#t79">79</a></span><span class="t">            <span class="nam">session</span><span class="op">.</span><span class="nam">clear</span><span class="op">(</span><span class="op">)</span>  <span class="com"># &#28165;&#31354;session</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t80" class="run"><span class="n"><a href="#t80">80</a></span><span class="t">            <span class="nam">session</span><span class="op">[</span><span class="str">"user_id"</span><span class="op">]</span> <span class="op">=</span> <span class="nam">user</span><span class="op">[</span><span class="str">'id'</span><span class="op">]</span>  <span class="com"># &#35760;&#24405;&#29992;&#25143;&#30340;id</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t81" class="run"><span class="n"><a href="#t81">81</a></span><span class="t">            <span class="key">return</span> <span class="nam">redirect</span><span class="op">(</span><span class="nam">url_for</span><span class="op">(</span><span class="str">"index"</span><span class="op">)</span><span class="op">)</span>  <span class="com"># &#37325;&#23450;&#21521;&#21040;&#20027;&#39029;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t82" class="pln"><span class="n"><a href="#t82">82</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t83" class="run"><span class="n"><a href="#t83">83</a></span><span class="t">        <span class="nam">flash</span><span class="op">(</span><span class="nam">error</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t84" class="pln"><span class="n"><a href="#t84">84</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t85" class="run"><span class="n"><a href="#t85">85</a></span><span class="t">    <span class="key">return</span> <span class="nam">render_template</span><span class="op">(</span><span class="str">"auth/login.html"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t86" class="pln"><span class="n"><a href="#t86">86</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t87" class="pln"><span class="n"><a href="#t87">87</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t88" class="run"><span class="n"><a href="#t88">88</a></span><span class="t"><span class="op">@</span><span class="nam">bp</span><span class="op">.</span><span class="nam">before_app_request</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t89" class="pln"><span class="n"><a href="#t89">89</a></span><span class="t"><span class="key">def</span> <span class="nam">load_logged_in_user</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t90" class="run"><span class="n"><a href="#t90">90</a></span><span class="t">    <span class="nam">user_id</span> <span class="op">=</span> <span class="nam">session</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="str">"user_id"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t91" class="pln"><span class="n"><a href="#t91">91</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t92" class="run"><span class="n"><a href="#t92">92</a></span><span class="t">    <span class="key">if</span> <span class="nam">user_id</span> <span class="key">is</span> <span class="key">None</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t93" class="run"><span class="n"><a href="#t93">93</a></span><span class="t">        <span class="nam">g</span><span class="op">.</span><span class="nam">user</span> <span class="op">=</span> <span class="key">None</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t94" class="pln"><span class="n"><a href="#t94">94</a></span><span class="t">    <span class="key">else</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t95" class="pln"><span class="n"><a href="#t95">95</a></span><span class="t">        <span class="com"># &#23558;&#35813;&#29992;&#25143;&#30340;&#20449;&#24687;&#21152;&#36733;&#21040;g&#20013;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t96" class="pln"><span class="n"><a href="#t96">96</a></span><span class="t">        <span class="com"># &#36825;&#37324;Session&#21482;&#23384;&#20102;user&#30340;id&#65292;&#20294;&#26159;g&#20013;&#23384;&#20102;user&#30340;&#25152;&#26377;&#20449;&#24687;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t97" class="run"><span class="n"><a href="#t97">97</a></span><span class="t">        <span class="nam">g</span><span class="op">.</span><span class="nam">user</span> <span class="op">=</span> <span class="nam">get_db</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">execute</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t98" class="pln"><span class="n"><a href="#t98">98</a></span><span class="t">            <span class="str">"SELECT * FROM user WHERE id = ?"</span><span class="op">,</span> <span class="op">(</span><span class="nam">user_id</span><span class="op">,</span> <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t99" class="pln"><span class="n"><a href="#t99">99</a></span><span class="t">        <span class="op">)</span><span class="op">.</span><span class="nam">fetchone</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t100" class="pln"><span class="n"><a href="#t100">100</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t101" class="pln"><span class="n"><a href="#t101">101</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t102" class="run"><span class="n"><a href="#t102">102</a></span><span class="t"><span class="op">@</span><span class="nam">bp</span><span class="op">.</span><span class="nam">route</span><span class="op">(</span><span class="str">"/logout"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t103" class="pln"><span class="n"><a href="#t103">103</a></span><span class="t"><span class="key">def</span> <span class="nam">logout</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t104" class="run"><span class="n"><a href="#t104">104</a></span><span class="t">    <span class="nam">session</span><span class="op">.</span><span class="nam">clear</span><span class="op">(</span><span class="op">)</span>  <span class="com"># &#28165;&#38500;&#20250;&#35805;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t105" class="run"><span class="n"><a href="#t105">105</a></span><span class="t">    <span class="key">return</span> <span class="nam">redirect</span><span class="op">(</span><span class="nam">url_for</span><span class="op">(</span><span class="str">"index"</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t106" class="pln"><span class="n"><a href="#t106">106</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t107" class="pln"><span class="n"><a href="#t107">107</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t108" class="pln"><span class="n"><a href="#t108">108</a></span><span class="t"><span class="com"># &#20854;&#20182;&#35270;&#22270;&#30340;&#39564;&#35777;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t109" class="pln"><span class="n"><a href="#t109">109</a></span><span class="t"><span class="com"># &#23450;&#20041;&#35013;&#39280;&#22120;&#65292;&#29992;&#20110;&#26816;&#26597;&#30331;&#24405;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t110" class="run"><span class="n"><a href="#t110">110</a></span><span class="t"><span class="key">def</span> <span class="nam">login_required</span><span class="op">(</span><span class="nam">view</span><span class="op">)</span><span class="op">:</span>  <span class="com"># view&#20026;&#21407;&#35270;&#22270;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t111" class="run"><span class="n"><a href="#t111">111</a></span><span class="t">    <span class="op">@</span><span class="nam">functools</span><span class="op">.</span><span class="nam">wraps</span><span class="op">(</span><span class="nam">view</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t112" class="pln"><span class="n"><a href="#t112">112</a></span><span class="t">    <span class="key">def</span> <span class="nam">wrapped_view</span><span class="op">(</span><span class="op">**</span><span class="nam">kwargs</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t113" class="run"><span class="n"><a href="#t113">113</a></span><span class="t">        <span class="key">if</span> <span class="nam">g</span><span class="op">.</span><span class="nam">user</span> <span class="key">is</span> <span class="key">None</span><span class="op">:</span>  <span class="com"># &#20854;&#20182;&#35270;&#22270;&#22240;&#20026;&#35201;&#29992;user&#30340;&#20855;&#20307;&#20449;&#24687;&#65292;&#25152;&#20197;&#29992;g&#26469;&#21028;&#26029;&#32780;&#19981;&#26159;session&#65292;session&#20013;&#21482;&#26159;user_id</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t114" class="run"><span class="n"><a href="#t114">114</a></span><span class="t">            <span class="key">return</span> <span class="nam">redirect</span><span class="op">(</span><span class="nam">url_for</span><span class="op">(</span><span class="str">"auth.login"</span><span class="op">)</span><span class="op">)</span>  <span class="com"># &#24403;&#27809;&#26377;&#36825;&#20010;&#29992;&#25143;&#35828;&#26126;&#27809;&#30331;&#24405;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t115" class="pln"><span class="n"><a href="#t115">115</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t116" class="run"><span class="n"><a href="#t116">116</a></span><span class="t">        <span class="key">return</span> <span class="nam">view</span><span class="op">(</span><span class="op">**</span><span class="nam">kwargs</span><span class="op">)</span>  <span class="com"># &#22914;&#26524;&#26377;&#36825;&#20010;user&#65292;&#21407;&#35270;&#22270;&#32487;&#32493;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t117" class="pln"><span class="n"><a href="#t117">117</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t118" class="run"><span class="n"><a href="#t118">118</a></span><span class="t">    <span class="key">return</span> <span class="nam">wrapped_view</span>  <span class="com"># &#36820;&#22238;&#36825;&#20010;&#20869;&#20989;&#25968;</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t119" class="pln"><span class="n"><a href="#t119">119</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+</div>
+<div id="footer">
+    <div class="content">
+        <p>
+            <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.3</a>,
+            created at 2020-11-21 20:02 +0800
+        </p>
+    </div>
+</div>
+</body>
+</html>
